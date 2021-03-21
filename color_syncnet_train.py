@@ -31,8 +31,9 @@ global_epoch = 0
 use_cuda = torch.cuda.is_available()
 print('use_cuda: {}'.format(use_cuda))
 
+
 syncnet_T = 5 # 25 fps;5帧=0.04*5=0.2s =200ms
-syncnet_mel_step_size = 18 # 200 ms / 12.5 ms(hopsize)=16
+syncnet_mel_step_size = 16 # 200 ms / 12.5 ms(hopsize)=16
 
 class Dataset(object):
     def __init__(self, split):
@@ -44,6 +45,7 @@ class Dataset(object):
     def get_window(self, start_frame):
         start_id = self.get_frame_id(start_frame)
         vidname = dirname(start_frame)
+
 
         window_fnames = []
         for frame_id in range(start_id, start_id + syncnet_T):

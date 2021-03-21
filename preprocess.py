@@ -95,7 +95,8 @@ def main(args):
 	print('Started processing for {} with {} GPUs'.format(args.data_root, args.ngpu))
 
 	filelist = glob(path.join(args.data_root, '*/*.mp4'))
-
+	#filelist = glob(args.data_root+"/*.mp4") # 获取所有的mp4文件名
+	#print(filelist)
 	jobs = [(vfile, args, i%args.ngpu) for i, vfile in enumerate(filelist)]
 	p = ThreadPoolExecutor(args.ngpu)
 	futures = [p.submit(mp_handler, j) for j in jobs]

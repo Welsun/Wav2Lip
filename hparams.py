@@ -25,10 +25,10 @@ hparams = HParams(
 	# Does not work if n_ffit is not multiple of hop_size!!
 	use_lws=False,
 	
-	n_fft=1024,  #800 Extra window size is filled with 0 paddings to match this parameter
-	hop_size=256,  #200 For 16000Hz, 200 = 12.5 ms (0.0125 * sample_rate)
-	win_size=1024,  #800 For 16000Hz, 800 = 50 ms (If None, win_size = n_fft) (0.05 * sample_rate)
-	sample_rate=22050,  # 16000Hz (corresponding to librispeech) (sox --i <filename>)
+	n_fft=800,  #800 Extra window size is filled with 0 paddings to match this parameter
+	hop_size=200,  #200 For 16000Hz, 200 = 12.5 ms (0.0125 * sample_rate)
+	win_size=800,  #800 For 16000Hz, 800 = 50 ms (If None, win_size = n_fft) (0.05 * sample_rate)
+	sample_rate=16000,  # 16000Hz (corresponding to librispeech) (sox --i <filename>)
 	
 	frame_shift_ms=None,  # Can replace hop_size parameter. (Recommended: 12.5)
 	
@@ -64,7 +64,7 @@ hparams = HParams(
 	batch_size=16,
 	initial_learning_rate=1e-4,
 	nepochs=200000000000000000,  ### ctrl + c, stop whenever eval loss is consistently greater than train loss for ~10 epochs
-	num_workers=16,
+	num_workers=4,
 	checkpoint_interval=3000,
 	eval_interval=3000,
     save_optimizer_state=True,
@@ -75,7 +75,7 @@ hparams = HParams(
 	syncnet_eval_interval=10000,
 	syncnet_checkpoint_interval=10000,
 
-	disc_wt=0.07,
+	disc_wt=0.3,
 	disc_initial_learning_rate=1e-4,
 )
 
