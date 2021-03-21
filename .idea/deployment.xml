@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="abc@10.201.195.175:22" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="abc@10.201.195.175:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/abc/sw/Wav2Lip" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
